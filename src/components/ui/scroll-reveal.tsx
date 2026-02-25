@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, type Variants } from "framer-motion";
+import { motion, useInView, type Variants, domAnimation, LazyMotion } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -41,14 +41,16 @@ export function ScrollReveal({
   };
 
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      className={cn(className)}
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={domAnimation}>
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variants}
+        className={cn(className)}
+      >
+        {children}
+      </motion.div>
+    </LazyMotion>
   );
 }

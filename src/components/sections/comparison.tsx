@@ -21,7 +21,7 @@ export function Comparison() {
 
         <ScrollReveal delay={0.2} className="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-border/60 bg-background/50 backdrop-blur-md shadow-2xl">
           <Table>
-            <TableHeader>
+            <TableHeader className="sticky top-0 bg-background/95 backdrop-blur z-10">
               <TableRow className="hover:bg-transparent border-b-2 border-primary/10">
                 <TableHead className="w-[40%] pl-8 py-6 text-lg font-bold font-heading">Features</TableHead>
                 <TableHead className="text-center text-primary font-bold text-xl bg-primary/5 py-6 font-heading">{ourName}</TableHead>

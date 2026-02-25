@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/container";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ConnectorLine } from "@/components/graphics/connector-line";
 
 export function HowItWorks() {
   const { title, steps } = siteConfig.pages.home.howItWorks;
@@ -18,8 +19,7 @@ export function HowItWorks() {
         </ScrollReveal>
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mt-16 relative">
-          {/* Connector Line (Desktop) */}
-          <div className="hidden lg:block absolute top-8 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -z-10" />
+          <ConnectorLine />
 
           {steps.map((step, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>

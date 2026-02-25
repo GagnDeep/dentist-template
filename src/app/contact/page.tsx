@@ -13,6 +13,7 @@ import * as z from "zod";
 import { useState } from "react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { AnimatedMap } from "@/components/graphics/animated-map";
+import { TriggerConfetti } from "@/components/ui/confetti";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name is too short"),
@@ -70,6 +71,7 @@ export default function ContactPage() {
               <CardContent>
                 {isSuccess ? (
                   <div className="flex flex-col items-center justify-center h-full py-12 text-center space-y-4 animate-in fade-in zoom-in">
+                    <TriggerConfetti />
                     <div className="h-16 w-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
                       <Send className="h-8 w-8" />
                     </div>

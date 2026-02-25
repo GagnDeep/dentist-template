@@ -7,6 +7,7 @@ import { HeroIllustration } from "@/components/graphics/hero-illustration";
 import { Container } from "@/components/ui/container";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { TypewriterText } from "@/components/ui/typewriter-text";
+import { MouseParallax } from "@/components/ui/mouse-parallax";
 import { Star } from "lucide-react";
 
 export function Hero() {
@@ -75,7 +76,9 @@ export function Hero() {
           </div>
 
           <ScrollReveal direction="left" delay={0.4} className="relative mx-auto w-full max-w-[500px] lg:max-w-none">
-            <HeroIllustration className="w-full h-auto drop-shadow-2xl" />
+            <MouseParallax strength={30}>
+              <HeroIllustration className="w-full h-auto drop-shadow-2xl" />
+            </MouseParallax>
           </ScrollReveal>
         </div>
       </Container>

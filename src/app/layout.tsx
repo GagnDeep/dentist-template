@@ -9,6 +9,8 @@ import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
+import { SkipLink } from "@/components/ui/skip-link";
+import { AppointmentModal } from "@/components/ui/appointment-modal";
 
 export const metadata: Metadata = {
   title: {
@@ -64,12 +66,14 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TRPCReactProvider>
+            <SkipLink />
             <div className="flex min-h-screen flex-col">
               <AnnouncementBar />
               <Navbar />
-              <main className="flex-1">{children}</main>
+              <main className="flex-1" id="main-content">{children}</main>
               <Footer />
             </div>
+            <AppointmentModal />
           </TRPCReactProvider>
         </ThemeProvider>
       </body>

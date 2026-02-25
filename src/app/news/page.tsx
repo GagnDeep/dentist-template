@@ -30,9 +30,12 @@ export default function NewsPage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-blue-500/10 group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <CardHeader>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                      <Calendar className="h-4 w-4" />
-                      {item.date}
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4" />
+                        {item.date}
+                      </div>
+                      <span className="text-xs bg-muted px-2 py-1 rounded-full">3 min read</span>
                     </div>
                     <CardTitle className="group-hover:text-primary transition-colors font-heading text-xl">
                       {item.title}

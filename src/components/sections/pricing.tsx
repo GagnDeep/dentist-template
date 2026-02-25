@@ -49,8 +49,8 @@ export function Pricing() {
                   : "bg-background/60 hover:border-primary/50"
               )}>
                 {p.highlight && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold shadow-md">
-                    Most Popular
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-blue-600 text-primary-foreground px-4 py-1 rounded-full text-sm font-bold shadow-md flex items-center gap-2">
+                    <span>🔥</span> Limited Time Offer
                   </div>
                 )}
                 <CardHeader>

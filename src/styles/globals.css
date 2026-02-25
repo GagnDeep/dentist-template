@@ -10,6 +10,13 @@
   --font-heading: var(--font-heading), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
+/* Fluid Typography */
+:root {
+  --text-base: clamp(1rem, 0.9vw + 0.8rem, 1.2rem);
+  --text-lg: clamp(1.125rem, 1vw + 0.9rem, 1.5rem);
+  --text-xl: clamp(1.25rem, 1.2vw + 1rem, 2rem);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
