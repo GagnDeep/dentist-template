@@ -128,3 +128,34 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media print {
+  header,
+  footer,
+  .fixed,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Keep essential content clean */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Custom Focus Ring Utility */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-all duration-200;
+}

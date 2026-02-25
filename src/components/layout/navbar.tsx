@@ -4,14 +4,10 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Menu } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { MobileMenu } from "@/components/layout/mobile-menu";
 
 export function Navbar() {
   const { setTheme, theme } = useTheme();
@@ -84,35 +80,7 @@ export function Navbar() {
             <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-6 mt-12">
-                {siteConfig.nav.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-lg font-medium hover:text-primary border-b pb-2"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-                <div className="mt-8 space-y-4">
-                  <Button asChild className="w-full text-lg h-12">
-                    <Link href="/contact">Book Now</Link>
-                  </Button>
-                  <p className="text-center text-sm text-muted-foreground">
-                    Call us: {siteConfig.pages.contact.phone}
-                  </p>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <MobileMenu />
         </div>
       </div>
     </header>

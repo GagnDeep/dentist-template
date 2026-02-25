@@ -16,10 +16,15 @@ import { FAQ } from "@/components/sections/faq";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { Newsletter } from "@/components/sections/newsletter";
 import { FloatingCTA } from "@/components/ui/floating-cta";
+import { CookieConsent } from "@/components/ui/cookie-consent";
+import { ExitIntentModal } from "@/components/ui/exit-intent-modal";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { BackToTop } from "@/components/ui/back-to-top";
 
 export default function HomePage() {
   return (
     <>
+      <ScrollProgress />
       <Hero />
       <TrustedBy />
       <SocialProof />
@@ -38,6 +43,9 @@ export default function HomePage() {
       <FinalCTA />
       <Newsletter />
       <FloatingCTA />
+      <CookieConsent />
+      <ExitIntentModal />
+      <BackToTop />
     </>
   );
 }

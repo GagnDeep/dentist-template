@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useState } from "react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { AnimatedMap } from "@/components/graphics/animated-map";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name is too short"),
@@ -180,15 +181,8 @@ export default function ContactPage() {
                 </div>
               </CardContent>
             </Card>
-            <div className="h-64 rounded-xl bg-muted overflow-hidden relative shadow-inner">
-               {/* Map Placeholder Graphic */}
-               <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=Patiala&zoom=13&size=600x300&sensor=false')] bg-cover bg-center opacity-50 grayscale hover:grayscale-0 transition-all duration-500" />
-               <div className="absolute inset-0 flex items-center justify-center">
-                 <Button variant="secondary" className="shadow-lg pointer-events-none">
-                    <MapPin className="mr-2 h-4 w-4" />
-                    Open in Maps
-                 </Button>
-               </div>
+            <div className="h-80 rounded-xl overflow-hidden relative shadow-xl border border-border/50">
+               <AnimatedMap />
             </div>
           </ScrollReveal>
         </div>

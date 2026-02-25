@@ -6,6 +6,7 @@ import { TextHighlight } from "@/components/ui/text-highlight";
 import { HeroIllustration } from "@/components/graphics/hero-illustration";
 import { Container } from "@/components/ui/container";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { TypewriterText } from "@/components/ui/typewriter-text";
 import { Star } from "lucide-react";
 
 export function Hero() {
@@ -28,7 +29,9 @@ export function Hero() {
               <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-heading leading-tight">
                 {title}
                 <br className="hidden md:block" />
-                <TextHighlight className="mt-2">{highlight}</TextHighlight>
+                <TextHighlight className="mt-2">
+                  <TypewriterText text={highlight} />
+                </TextHighlight>
               </h1>
             </ScrollReveal>
 

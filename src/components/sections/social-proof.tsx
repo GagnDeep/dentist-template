@@ -2,6 +2,7 @@ import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/container";
 import { Star } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 export function SocialProof() {
   const { avatarImages, text, rating } = siteConfig.pages.home.socialProof;
@@ -25,7 +26,7 @@ export function SocialProof() {
                 </div>
               ))}
               <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-background bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold shadow-sm z-20">
-                +5k
+                +<AnimatedCounter value={5} suffix="k" />
               </div>
             </div>
 

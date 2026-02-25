@@ -288,5 +288,39 @@ export const siteConfig = {
         content: "By using our services, you agree...",
       },
     },
+    news: {
+      title: "Latest News",
+      description: "Updates, tips, and stories from our clinic.",
+      items: [
+        {
+          title: "The Importance of Regular Flossing",
+          date: "Oct 12, 2023",
+          excerpt: "Why skipping this simple step can cost you thousands.",
+          slug: "importance-of-flossing",
+        },
+        {
+          title: "New Laser Technology Arrives",
+          date: "Sep 28, 2023",
+          excerpt: "We have upgraded our lab with the latest dental laser.",
+          slug: "new-laser-tech",
+        },
+        {
+          title: "5 Foods to Avoid for White Teeth",
+          date: "Aug 15, 2023",
+          excerpt: "Keep your smile bright by avoiding these staining foods.",
+          slug: "foods-to-avoid",
+        },
+      ],
+    },
+    exitIntent: {
+      title: "Wait! Don't leave yet.",
+      description: "Get a free consultation when you book today.",
+      cta: "Claim Offer",
+    },
+    cookieConsent: {
+      text: "We use cookies to ensure you get the best experience on our website.",
+      accept: "Accept",
+      decline: "Decline",
+    },
   },
 } as const;
