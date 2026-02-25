@@ -5,8 +5,16 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading: var(--font-heading), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Fluid Typography */
+:root {
+  --text-base: clamp(1rem, 0.9vw + 0.8rem, 1.2rem);
+  --text-lg: clamp(1.125rem, 1vw + 0.9rem, 1.5rem);
+  --text-xl: clamp(1.25rem, 1.2vw + 1rem, 2rem);
 }
 
 @theme inline {
@@ -126,4 +134,35 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@media print {
+  header,
+  footer,
+  .fixed,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Keep essential content clean */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Custom Focus Ring Utility */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-all duration-200;
 }
